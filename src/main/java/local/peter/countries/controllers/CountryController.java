@@ -86,13 +86,13 @@ public class CountryController {
 
         int totalCountries = countryList.size();
         System.out.println("Total Countries: " + totalCountries);
-        int medianCountryId = (1 + totalCountries) / 2;
-        System.out.println("Median Country ID is: " + medianCountryId);
+        int medianCountry = (1 + totalCountries) / 2;
+        System.out.println("Median Country ID is: " + medianCountry);
 
-        // Used (medianCountryId - 1) below since the position of an array is 1 less than the ID value
+        // Used (medianCountry - 1) below since the position of an array is 1 less than the ID value
         // of the object
-        // ALSO: Mathematically, Country ID of 101 is the median of a list of 201 countries.
+        // ALSO: Mathematically, Country # 101 is the median of a list of 201 countries.
         // Instructions on git-repo incorrectly assumes ID of 100.
-        return new ResponseEntity<>(countryList.get(medianCountryId - 1), HttpStatus.OK);
+        return new ResponseEntity<>(countryList.get(medianCountry - 1), HttpStatus.OK);
     }
 }
